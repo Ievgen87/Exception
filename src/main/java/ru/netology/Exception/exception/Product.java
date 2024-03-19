@@ -1,28 +1,11 @@
 package ru.netology.Exception.exception;
+
+import java.util.Objects;
+
 public class Product {
     protected int id;
     protected String title;
     protected int price;
-
-    public int getId() {
-        return id;
-    }
-
-    public java.lang.String getTitle() {
-        return title;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setTitle(java.lang.String title) {
-        this.title = title;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
 
     public Product(int id, String title, int price) {
@@ -31,7 +14,6 @@ public class Product {
         this.price = price;
     }
 
-    // Вспомогательные методы для корректной работы equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -45,6 +27,25 @@ public class Product {
         return Objects.hash(id, title, price);
     }
 
-    // геттеры + сеттеры
-    // на id только геттер — пусть будет неизменяемым для товара
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+
 }
